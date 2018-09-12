@@ -5,7 +5,11 @@ defmodule TicTacToeGameWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", TicTacToeGameWeb do
+  scope "/", TicTacToeGameWeb do
     pipe_through :api
+    resources "/games", GameController, only: [:index, :show, :create, :delete] do
+      put "/move", GameController, :move
+      put "/join", GameController, :join
+    end
   end
 end
