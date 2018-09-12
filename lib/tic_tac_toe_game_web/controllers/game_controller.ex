@@ -19,7 +19,11 @@ defmodule TicTacToeGameWeb.GameController do
     render(conn, "index.json", %{games: games})
   end
 
-  def show(conn, params) do
+  def show(conn, %{"id" => id}) do
+    game = 
+      (from game in Game, where: game.id == ^id)
+      |> Repo.one
+    render(conn, "show.json", %{game: game})
   end
 
   def create(conn, params) do
