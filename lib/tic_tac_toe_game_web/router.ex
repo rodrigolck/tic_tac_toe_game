@@ -3,6 +3,7 @@ defmodule TicTacToeGameWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug TicTacToeGameWeb.Plugs.AssignUser
   end
 
   scope "/", TicTacToeGameWeb do
