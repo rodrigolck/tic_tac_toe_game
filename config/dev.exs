@@ -35,3 +35,10 @@ config :logger, :console, format: "[$level] $message\n"
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
+
+config :tic_tac_toe_game, TicTacToeGame.Repo,
+  database: "tic_tac_toe_development",
+  hostname: "localhost"
+
+config :tic_tac_toe_game, TicTacToeGame.Client.TicTacToeUser,
+  url: "http://localhost:4000"

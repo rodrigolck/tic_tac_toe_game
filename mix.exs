@@ -36,7 +36,10 @@ defmodule TicTacToeGame.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:guardian, "~> 1.0"}
+      {:guardian, "~> 1.0"},
+      {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2"},
+      {:httpoison, "~> 1.0"},
+      {:uri_query, "~> 0.1.1"}
     ]
   end
 end

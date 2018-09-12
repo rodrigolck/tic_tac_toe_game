@@ -8,6 +8,7 @@ defmodule TicTacToeGame.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      supervisor(TicTacToeGame.Repo, []),
       # Start the endpoint when the application starts
       supervisor(TicTacToeGameWeb.Endpoint, []),
       # Start your own worker by calling: TicTacToeGame.Worker.start_link(arg1, arg2, arg3)
